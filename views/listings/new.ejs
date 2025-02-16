@@ -1,0 +1,131 @@
+<%layout("/layouts/boilerplate")%>
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <br />
+    <h3>Add New Listing</h3>
+
+    <form
+      method="post"
+      action="/listings"
+      class="needs-validation"
+      novalidate
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Property Title</label>
+        <input
+          name="listing[title]"
+          placeholder="Enter property name"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please choose Title.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Property Description</label>
+        <textarea
+          name="listing[description]"
+          placeholder="Describe your property and its features"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback">
+          Please provide a property description.
+        </div>
+        <div class="valid-feedback">Looks great!</div>
+      </div>
+
+      <!-- <div class="mb-3">
+        <label for="image" class="form-label">Image Link</label>
+        <input
+          name="listing[image][url]"
+          placeholder="Enter the URL of the property image"
+          class="form-control"
+        />
+        <div class="invalid-feedback">
+          Please provide an image URL (optional).
+        </div>
+      </div> -->
+      <!-- <div class="mb-3">
+        <label for="image" class="form-label">Image Link</label>
+        <input
+          name="listing[image][url]"
+          placeholder="Enter the URL of the property image"
+          class="form-control"
+        />
+        <div class="invalid-feedback">
+          Please provide an image URL (optional).
+        </div>
+      </div> -->
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Listing Imgage</label>
+        <input
+          name="listing[image]"
+          placeholder="Enter the URL of the property image"
+          class="form-control"
+          type="file"
+          required
+          accept=".jpg, .jpeg, .png"
+        />
+        <div class="invalid-feedback">
+          Please provide an image URL (optional).
+        </div>
+      </div>
+      <!-- <div class="mb-3">
+        <label for="image" class="form-label">Upload Listing Imgage</label>
+        <input
+          name="listing[image][url]"
+          placeholder="Enter the URL of the property image"
+          class="form-control"
+          type="file"
+        />
+        <div class="invalid-feedback">
+          Please provide an image URL (optional).
+        </div>
+      </div> -->
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            required
+            name="listing[price]"
+            placeholder="1699"
+            type="number"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please provide a valid price.</div>
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <input
+            name="listing[country]"
+            placeholder="India"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please provide a country.</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          name="listing[location]"
+          placeholder="Leh, Ladakh"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Please provide a location.</div>
+      </div>
+
+      <button class="btn btn-dark add-btn mt-3">Add Property</button>
+    </form>
+  </div>
+</div>
+<br />
